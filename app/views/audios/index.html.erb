@@ -1,0 +1,24 @@
+<h1>Listing audios</h1>
+
+<table>
+  <tr>
+    <th>Size</th>
+    <th>Content type</th>
+    <th>Filename</th>
+  </tr>
+
+<% for audio in @audios %>
+  <tr>
+    <td><%=h audio.size %></td>
+    <td><%=h audio.content_type %></td>
+    <td><%=h audio.filename %></td>
+    <td><%= link_to 'Show', audio %></td>
+    <td><%= link_to 'Edit', edit_audio_path(audio) %></td>
+    <td><%= link_to 'Destroy', audio, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New audio', new_audio_path %>

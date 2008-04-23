@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  status: MyString
+  status_description: MyText
+  processed_at: 2008-04-22 09:55:54
+  completed_at: 2008-04-22 09:55:54
+  processable_id: 1
+  processable_type: MyString
+
+two:
+  status: MyString
+  status_description: MyText
+  processed_at: 2008-04-22 09:55:54
+  completed_at: 2008-04-22 09:55:54
+  processable_id: 1
+  processable_type: MyString

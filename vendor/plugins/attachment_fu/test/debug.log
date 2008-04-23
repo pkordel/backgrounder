@@ -1,0 +1,730 @@
+# Logfile created on Thu Apr 17 10:47:57 +0200 2008 by /
+  [4;35;1mSQL (0.000272)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.003585)[0m   [0;1mDROP TABLE attachments[0m
+  [4;35;1mSQL (0.004387)[0m   [0mCREATE TABLE attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "db_file_id" integer DEFAULT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "aspect_ratio" float DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003261)[0m   [0;1mDROP TABLE file_attachments[0m
+  [4;35;1mSQL (0.004410)[0m   [0mCREATE TABLE file_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL, "aspect_ratio" float DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: gd2_attachments: DROP TABLE gd2_attachments[0m
+  [4;35;1mSQL (0.003732)[0m   [0mCREATE TABLE gd2_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003509)[0m   [0;1mDROP TABLE image_science_attachments[0m
+  [4;35;1mSQL (0.003257)[0m   [0mCREATE TABLE image_science_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: core_image_attachments: DROP TABLE core_image_attachments[0m
+  [4;35;1mSQL (0.002626)[0m   [0mCREATE TABLE core_image_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001730)[0m   [0;1mDROP TABLE mini_magick_attachments[0m
+  [4;35;1mSQL (0.002154)[0m   [0mCREATE TABLE mini_magick_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001849)[0m   [0;1mDROP TABLE mini_magick_attachments[0m
+  [4;35;1mSQL (0.001911)[0m   [0mCREATE TABLE mini_magick_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001969)[0m   [0;1mDROP TABLE orphan_attachments[0m
+  [4;35;1mSQL (0.003368)[0m   [0mCREATE TABLE orphan_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "db_file_id" integer DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003002)[0m   [0;1mDROP TABLE minimal_attachments[0m
+  [4;35;1mSQL (0.004193)[0m   [0mCREATE TABLE minimal_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003586)[0m   [0;1mDROP TABLE db_files[0m
+  [4;35;1mSQL (0.004470)[0m   [0mCREATE TABLE db_files ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" blob DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003466)[0m   [0;1mDROP TABLE s3_attachments[0m
+  [4;35;1mSQL (0.003754)[0m   [0mCREATE TABLE s3_attachments ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer DEFAULT NULL, "thumbnail" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "size" integer DEFAULT NULL, "width" integer DEFAULT NULL, "height" integer DEFAULT NULL, "type" varchar(255) DEFAULT NULL, "aspect_ratio" float DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table plugin_schema_info already exists: CREATE TABLE plugin_schema_info 
+ (plugin_name varchar(255), version integer)
+[0m
+  [4;36;1mSQL (0.002215)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;35;1mAttachment Delete all (0.000349)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000064)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000059)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000070)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000059)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000590)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000118)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000125)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000098)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000472)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000116)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000100)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000099)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000098)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000293)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000064)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000058)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000058)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000315)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000069)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000059)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000057)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000391)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000076)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000059)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000274)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000260)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000064)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000059)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000234)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000063)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000058)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000058)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000262)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000073)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000057)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000056)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000055)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000200)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000059)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000058)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000056)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000057)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000561)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000117)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000112)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000112)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000096)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mCoreImageAttachment Create (0.000204)[0m   [0;1mINSERT INTO core_image_attachments ("content_type", "size", "thumbnail", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 3627, NULL, NULL, 'rails.png', 55, NULL, 42)[0m
+  [4;35;1mCoreImageAttachment Load (0.000126)[0m   [0mSELECT * FROM core_image_attachments WHERE (core_image_attachments."parent_id" = 1 AND core_image_attachments."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;36;1mCoreImageAttachment Create (0.000231)[0m   [0;1mINSERT INTO core_image_attachments ("content_type", "size", "thumbnail", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 3353, 'thumb', NULL, 'rails_thumb.png', 51, 1, 50)[0m
+  [4;35;1mCoreImageAttachment Load (0.000187)[0m   [0mSELECT * FROM core_image_attachments WHERE (core_image_attachments."parent_id" = 1 AND core_image_attachments."thumbnail" = 'geometry') LIMIT 1[0m
+  [4;36;1mCoreImageAttachment Create (0.000231)[0m   [0;1mINSERT INTO core_image_attachments ("content_type", "size", "thumbnail", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 2443, 'geometry', NULL, 'rails_geometry.png', 32, 1, 31)[0m
+  [4;35;1mCoreImageAttachment Load (0.000413)[0m   [0mSELECT * FROM core_image_attachments WHERE (core_image_attachments."id" = 1) [0m
+  [4;36;1mCoreImageAttachment Load (0.000567)[0m   [0;1mSELECT * FROM core_image_attachments WHERE (core_image_attachments.parent_id = 1) [0m
+  [4;35;1mAttachment Delete all (0.000376)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000102)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000098)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000097)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000097)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000204)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Create (0.000188)[0m   [0mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1mDbFile Create (0.000182)[0m   [0;1mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;35;1mAttachment Update (0.000115)[0m   [0mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mAttachment Load (0.000264)[0m   [0;1mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000143)[0m   [0mSELECT count(*) AS count_all FROM attachments [0m
+  [4;36;1mAttachment Delete all (0.000601)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000117)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000129)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000122)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000107)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT count(*) AS count_all FROM attachments [0m
+  [4;36;1mAttachment Create (0.000210)[0m   [0;1mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mDbFile Create (0.000264)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1mAttachment Update (0.000136)[0m   [0;1mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mAttachment Load (0.000411)[0m   [0mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;36;1mAttachment Update (0.000162)[0m   [0;1mUPDATE attachments SET "content_type" = 'image/png', "size" = 3, "height" = NULL, "db_file_id" = 1, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails.png', "width" = NULL, "parent_id" = NULL WHERE "id" = 1[0m
+  [4;35;1mDbFile Load (0.000217)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mDbFile Update (0.000125)[0m   [0;1mUPDATE db_files SET "data" = 'wtf' WHERE "id" = 1[0m
+  [4;35;1mAttachment Update (0.000094)[0m   [0mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mAttachment Load (0.000314)[0m   [0;1mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;35;1mDbFile Load (0.000168)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Delete all (0.000588)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000132)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000115)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000134)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000097)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000294)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Create (0.000226)[0m   [0mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1mDbFile Create (0.000199)[0m   [0;1mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;35;1mAttachment Update (0.000144)[0m   [0mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mAttachment Load (0.000414)[0m   [0;1mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000199)[0m   [0mSELECT count(*) AS count_all FROM attachments [0m
+  [4;36;1mAttachment Delete all (0.000639)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000132)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000118)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000105)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000096)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000269)[0m   [0mSELECT count(*) AS count_all FROM attachments [0m
+  [4;36;1m Create (0.000168)[0m   [0;1mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mDbFile Create (0.000140)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1m Update (0.000110)[0m   [0;1mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1m Load (0.000286)[0m   [0mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Delete all (0.000589)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000120)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000116)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000128)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000098)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000211)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Create (0.000207)[0m   [0mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 3, NULL, NULL, NULL, 'foo.txt', NULL, NULL, NULL)[0m
+  [4;36;1mDbFile Create (0.000186)[0m   [0;1mINSERT INTO db_files ("data") VALUES('foo')[0m
+  [4;35;1mAttachment Update (0.000197)[0m   [0mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mAttachment Load (0.000434)[0m   [0;1mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;35;1mDbFile Load (0.000284)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Delete all (0.000586)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000119)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000116)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000129)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000098)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Create (0.000242)[0m   [0;1mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mDbFile Create (0.000241)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1mAttachment Update (0.000151)[0m   [0;1mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mAttachment Load (0.000456)[0m   [0mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000234)[0m   [0;1mSELECT count(*) AS count_all FROM attachments [0m
+  [4;35;1mAttachment Update (0.000154)[0m   [0mUPDATE attachments SET "content_type" = 'image/png', "size" = 1787, "height" = NULL, "db_file_id" = 1, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails2.png', "width" = NULL, "parent_id" = NULL WHERE "id" = 1[0m
+  [4;36;1mDbFile Load (0.000215)[0m   [0;1mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;35;1mDbFile Update (0.000134)[0m   [0mUPDATE db_files SET "data" = '‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚' WHERE "id" = 1[0m
+  [4;36;1mAttachment Update (0.000104)[0m   [0;1mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mSQL (0.000165)[0m   [0mSELECT count(*) AS count_all FROM attachments [0m
+  [4;36;1mAttachment Delete all (0.000573)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000119)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000118)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000124)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000109)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Create (0.000211)[0m   [0mINSERT INTO attachments ("content_type", "size", "thumbnail", "aspect_ratio", "db_file_id", "filename", "height", "parent_id", "width") VALUES('image/png', 3, NULL, NULL, NULL, 'foo.txt', NULL, NULL, NULL)[0m
+  [4;36;1mDbFile Create (0.000175)[0m   [0;1mINSERT INTO db_files ("data") VALUES('foo')[0m
+  [4;35;1mAttachment Update (0.000140)[0m   [0mUPDATE attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mAttachment Load (0.000413)[0m   [0;1mSELECT * FROM attachments WHERE (attachments."id" = 1) [0m
+  [4;35;1mAttachment Update (0.000141)[0m   [0mUPDATE attachments SET "content_type" = 'image/png', "size" = 3, "height" = NULL, "db_file_id" = 1, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'foo.txt', "width" = NULL, "parent_id" = NULL WHERE "id" = 1[0m
+  [4;36;1mAttachment Delete all (0.000655)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000123)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000131)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000100)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000113)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000255)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mFileAttachment Create (0.000233)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000401)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000261)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000074)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000061)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000096)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000086)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000247)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1m Create (0.000197)[0m   [0mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, '', 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1m Load (0.000340)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;35;1mSQL (0.000525)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mAttachment Delete all (0.000520)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000177)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000127)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000108)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000106)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000228)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mFileAttachment Create (0.000190)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000355)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000143)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000231)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000062)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000059)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mFileAttachment Create (0.000145)[0m   [0mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1mFileAttachment Load (0.000332)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;35;1mFileAttachment Update (0.000115)[0m   [0mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 3, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails.png', "width" = NULL, "parent_id" = NULL, "type" = NULL WHERE "id" = 1[0m
+  [4;36;1mFileAttachment Load (0.000266)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000130)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mAttachment Delete all (0.000224)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000061)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000057)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000057)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mFileAttachment Create (0.000141)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 3, NULL, NULL, NULL, 'foo.txt', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000300)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000261)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000066)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000061)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000061)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000059)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mFileAttachment Create (0.000138)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000306)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mFileAttachment Update (0.000108)[0m   [0mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 1787, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails2.png', "width" = NULL, "parent_id" = NULL, "type" = NULL WHERE "id" = 1[0m
+  [4;36;1mFileAttachment Load (0.000243)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000127)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mAttachment Delete all (0.000259)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000061)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000061)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000059)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000058)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1m Create (0.000169)[0m   [0mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, '', 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1m Load (0.000462)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;35;1mSQL (0.000186)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1m Update (0.000163)[0m   [0;1mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 1787, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails2.png', "width" = NULL, "parent_id" = NULL, "type" = '' WHERE "id" = 1[0m
+  [4;35;1m Load (0.000375)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000296)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000068)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000060)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mFileAttachment Create (0.000159)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000320)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mFileAttachment Update (0.000126)[0m   [0mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 1787, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails2.png', "width" = NULL, "parent_id" = NULL, "type" = NULL WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000243)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000062)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000060)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000058)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1m Create (0.000170)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, '', 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1m Load (0.000344)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1m Update (0.000147)[0m   [0mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 1787, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails2.png', "width" = NULL, "parent_id" = NULL, "type" = '' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000170)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000255)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000065)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000064)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000061)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mFileAttachment Create (0.000136)[0m   [0mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1mFileAttachment Load (0.000318)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;35;1mFileAttachment Create (0.000141)[0m   [0mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 4217, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1mFileAttachment Load (0.000329)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 2) [0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mAttachment Delete all (0.000591)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000119)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000116)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000122)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000098)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000257)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1m Create (0.000187)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, '', 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1m Load (0.000352)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;36;1m Create (0.000159)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 4217, NULL, NULL, '', 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1m Load (0.000358)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 2) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;36;1mSQL (0.000142)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000260)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000065)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000061)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000057)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mFileAttachment Create (0.000141)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000293)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mFileAttachment Update (0.000104)[0m   [0mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 1787, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'rails2.png', "width" = NULL, "parent_id" = NULL, "type" = NULL WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000252)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000063)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000059)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000058)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mFileAttachment Create (0.000131)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 3, NULL, NULL, NULL, 'foo.txt', NULL, NULL, NULL)[0m
+  [4;35;1mFileAttachment Load (0.000304)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;36;1mFileAttachment Update (0.000103)[0m   [0;1mUPDATE file_attachments SET "content_type" = 'image/png', "size" = 3, "height" = NULL, "aspect_ratio" = NULL, "thumbnail" = NULL, "filename" = 'foo.txt', "width" = NULL, "parent_id" = NULL, "type" = NULL WHERE "id" = 1[0m
+  [4;35;1mAttachment Delete all (0.000221)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000059)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000057)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000058)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mFileAttachment Create (0.000137)[0m   [0mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, NULL, 'rails.png', NULL, NULL, NULL)[0m
+  [4;36;1mFileAttachment Load (0.000287)[0m   [0;1mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1mAttachment Delete all (0.000602)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000120)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000112)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000097)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000271)[0m   [0mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;36;1m Create (0.000198)[0m   [0;1mINSERT INTO file_attachments ("content_type", "size", "thumbnail", "aspect_ratio", "type", "filename", "height", "parent_id", "width") VALUES('image/png', 1787, NULL, NULL, '', 'rails.png', NULL, NULL, NULL)[0m
+  [4;35;1m Load (0.000321)[0m   [0mSELECT * FROM file_attachments WHERE (file_attachments."id" = 1) AND ( (file_attachments."type" = '' ) ) [0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSELECT count(*) AS count_all FROM file_attachments [0m
+  [4;35;1mAttachment Delete all (0.000553)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000117)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000115)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000122)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000098)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000402)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000100)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000098)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000097)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000096)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000589)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000120)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000113)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000097)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000583)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000118)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000116)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000112)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000096)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000386)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000117)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000113)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000111)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000114)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000573)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000117)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000113)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000119)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000607)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000116)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000113)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000111)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000165)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000589)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000121)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000127)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000109)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000385)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000105)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000100)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000099)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000099)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000360)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000104)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000100)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000100)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000097)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000312)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000091)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000086)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000085)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000086)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000267)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000080)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000076)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000078)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000077)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000207)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000058)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000057)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000057)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000211)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000060)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000058)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000058)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000203)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000058)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000058)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000249)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000209)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000061)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000058)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000058)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000057)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000134)[0m   [0mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;36;1mMinimalAttachment Create (0.000138)[0m   [0;1mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 1787)[0m
+  [4;35;1mMinimalAttachment Load (0.000245)[0m   [0mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mAttachment Delete all (0.000559)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000132)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000119)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000100)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000101)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000291)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mMinimalAttachment Create (0.000178)[0m   [0mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 1787)[0m
+  [4;36;1mMinimalAttachment Load (0.000227)[0m   [0;1mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;35;1mMinimalAttachment Update (0.000105)[0m   [0mUPDATE minimal_attachments SET "content_type" = 'image/png', "size" = 3 WHERE "id" = 1[0m
+  [4;36;1mMinimalAttachment Load (0.000191)[0m   [0;1mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;36;1mAttachment Delete all (0.000262)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000062)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000059)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000059)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000058)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;36;1mMinimalAttachment Create (0.000133)[0m   [0;1mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 3)[0m
+  [4;35;1mMinimalAttachment Load (0.000271)[0m   [0mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mAttachment Delete all (0.000239)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000062)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000058)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000058)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000057)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mMinimalAttachment Create (0.000140)[0m   [0mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 1787)[0m
+  [4;36;1mMinimalAttachment Load (0.000245)[0m   [0;1mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000134)[0m   [0mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;36;1mAttachment Delete all (0.000221)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000059)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000057)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000057)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000057)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000129)[0m   [0mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;36;1mMinimalAttachment Create (0.000119)[0m   [0;1mINSERT INTO minimal_attachments ("content_type", "size") VALUES('foo/bar', 1787)[0m
+  [4;35;1mMinimalAttachment Load (0.000205)[0m   [0mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000131)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mAttachment Delete all (0.000623)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000125)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000119)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000110)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000100)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Create (0.000180)[0m   [0;1mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 1787)[0m
+  [4;35;1mMinimalAttachment Load (0.000303)[0m   [0mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;36;1mAttachment Delete all (0.000574)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000119)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000117)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000120)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000096)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Create (0.000177)[0m   [0mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 1787)[0m
+  [4;36;1mMinimalAttachment Load (0.000322)[0m   [0;1mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;35;1mAttachment Delete all (0.000412)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000119)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000117)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000114)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Create (0.000205)[0m   [0;1mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 1787)[0m
+  [4;35;1mMinimalAttachment Load (0.000278)[0m   [0mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mMinimalAttachment Update (0.000097)[0m   [0mUPDATE minimal_attachments SET "content_type" = 'image/png', "size" = 1787 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mSELECT count(*) AS count_all FROM minimal_attachments [0m
+  [4;35;1mAttachment Delete all (0.000217)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000058)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000056)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000057)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Create (0.000112)[0m   [0;1mINSERT INTO minimal_attachments ("content_type", "size") VALUES('image/png', 3)[0m
+  [4;35;1mMinimalAttachment Load (0.000205)[0m   [0mSELECT * FROM minimal_attachments WHERE (minimal_attachments."id" = 1) [0m
+  [4;36;1mMinimalAttachment Update (0.000088)[0m   [0;1mUPDATE minimal_attachments SET "content_type" = 'image/png', "size" = 3 WHERE "id" = 1[0m
+  [4;35;1mAttachment Delete all (0.000544)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000119)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000115)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000129)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000099)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mOrphanAttachment Create (0.000196)[0m   [0mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 1787, NULL, 'rails.png')[0m
+  [4;36;1mDbFile Create (0.000205)[0m   [0;1mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;35;1mOrphanAttachment Update (0.000129)[0m   [0mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mOrphanAttachment Load (0.000318)[0m   [0;1mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;35;1mSQL (0.000219)[0m   [0mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;36;1mAttachment Delete all (0.000564)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000119)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000115)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000121)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000097)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mSQL (0.000207)[0m   [0mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;36;1mOrphanAttachment Create (0.000193)[0m   [0;1mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 1787, NULL, 'rails.png')[0m
+  [4;35;1mDbFile Create (0.000234)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1mOrphanAttachment Update (0.000140)[0m   [0;1mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mOrphanAttachment Load (0.000343)[0m   [0mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;36;1mOrphanAttachment Update (0.000161)[0m   [0;1mUPDATE orphan_attachments SET "content_type" = 'image/png', "size" = 3, "db_file_id" = 1, "filename" = 'rails.png' WHERE "id" = 1[0m
+  [4;35;1mDbFile Load (0.000254)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mDbFile Update (0.000151)[0m   [0;1mUPDATE db_files SET "data" = 'wtf' WHERE "id" = 1[0m
+  [4;35;1mOrphanAttachment Update (0.000120)[0m   [0mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mOrphanAttachment Load (0.000275)[0m   [0;1mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;35;1mDbFile Load (0.000204)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mSQL (0.000182)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mAttachment Delete all (0.000561)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000119)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000116)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000126)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000101)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000211)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mOrphanAttachment Create (0.000208)[0m   [0mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 3, NULL, 'foo.txt')[0m
+  [4;36;1mDbFile Create (0.000190)[0m   [0;1mINSERT INTO db_files ("data") VALUES('foo')[0m
+  [4;35;1mOrphanAttachment Update (0.000131)[0m   [0mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mOrphanAttachment Load (0.000333)[0m   [0;1mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;35;1mDbFile Load (0.000217)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mAttachment Delete all (0.000722)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000121)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000118)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000100)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000099)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mOrphanAttachment Create (0.000196)[0m   [0mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 1787, NULL, 'rails.png')[0m
+  [4;36;1mDbFile Create (0.000205)[0m   [0;1mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;35;1mOrphanAttachment Update (0.000130)[0m   [0mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mOrphanAttachment Load (0.000292)[0m   [0;1mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;35;1mDbFile Load (0.000222)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mAttachment Delete all (0.000599)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000121)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000116)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000125)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000099)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mOrphanAttachment Create (0.000201)[0m   [0mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('foo/bar', 1787, NULL, 'rails.png')[0m
+  [4;36;1mDbFile Create (0.000200)[0m   [0;1mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;35;1mOrphanAttachment Update (0.000130)[0m   [0mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mOrphanAttachment Load (0.000298)[0m   [0;1mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;35;1mDbFile Load (0.000237)[0m   [0mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mAttachment Delete all (0.000590)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000124)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000133)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000956)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000132)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Create (0.000195)[0m   [0;1mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 1787, NULL, 'rails.png')[0m
+  [4;35;1mDbFile Create (0.073513)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1mOrphanAttachment Update (0.000208)[0m   [0;1mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mOrphanAttachment Load (0.000338)[0m   [0mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;36;1mDbFile Load (0.000234)[0m   [0;1mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;35;1mAttachment Delete all (0.000320)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000089)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000086)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000086)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000085)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Create (0.000159)[0m   [0;1mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 1787, NULL, 'rails.png')[0m
+  [4;35;1mDbFile Create (0.000155)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1mOrphanAttachment Update (0.000093)[0m   [0;1mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mOrphanAttachment Load (0.000237)[0m   [0mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;36;1mDbFile Load (0.000176)[0m   [0;1mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;35;1mAttachment Delete all (0.000221)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000057)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000057)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000057)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Create (0.000174)[0m   [0;1mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 1787, NULL, 'rails.png')[0m
+  [4;35;1mDbFile Create (0.000175)[0m   [0mINSERT INTO db_files ("data") VALUES('‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚')[0m
+  [4;36;1mOrphanAttachment Update (0.000093)[0m   [0;1mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mOrphanAttachment Load (0.000231)[0m   [0mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;35;1mOrphanAttachment Update (0.000130)[0m   [0mUPDATE orphan_attachments SET "content_type" = 'image/png', "size" = 1787, "db_file_id" = 1, "filename" = 'rails2.png' WHERE "id" = 1[0m
+  [4;36;1mDbFile Load (0.000175)[0m   [0;1mSELECT * FROM db_files WHERE (db_files."id" = 1) [0m
+  [4;35;1mDbFile Update (0.000103)[0m   [0mUPDATE db_files SET "data" = '‰PNG
+
+%00%00%00IHDR%00%00%002%00%00%00@%00%00%00oÔI%00%00%00gAMA%00%00ÖØÔOX2%00%00%00tEXtSoftware%00Adobe ImageReadyqÉe<%00%00%00ÀPLTE¸I8éÍ°Î‡w|"¦%25Ï•ŠµUH˜"óåÛ°¦¥ÿÿÿ’''+‹6BÈtjÚ¤‘µ;4® (Ğ«¤‰ÃiH°*,õëã¶zxÉ|VìÕ¾ûõñøïéŞ¶­¿QO×¡r”GH²2/ÎaêÌÆ¤<5ºFC².7ÅrLìÙÔßµ“û÷õ©Äf]ªI=ïÜÉòàÓ¤\XåÄ¡¿aD¿[U½X>æÃºşıüœ00®%25,ıú÷ÚÃÂ±eiûøúŸPKùóğÅae†"­ ™/p%00%00ÁIDATxÚ”×[c¢J%00`®–«xEEDETª¢`=¥ğÿÿÕIf@©û´ypw-_33„„(¥ÛáŸˆ…@éPt]UU]7?üU''ğ_¹.I’*
+ T	CÕ•¬¿aÑçqæ‘eøÙ?+‚åÙ¶$
+_L@õ Ùy3ú­d-5Ï›ş€‘OWâ$W”¢?ÂØ,M.G%25ÀoAƒ¤@R©<$a$;–ËåéNc”›ÑÜœÃŸı~–‚+"6d¥(°0$ç!!¥%25ó´Õ´©–öbÒ®WVÆ	
+]y‘sD¶Ó§ôZl\}X#í²¶½!ñ–¾ÅÔ1`eO’+¿²ôû¦¦íŞM x’CKNâñ)>Ÿ›¦iªM(½ÉAÁ‰»R8Îf?ƒ{göNqÜKïpİ6/e²”ÍğF	ÏâêJK®4Y÷z:ÓğšÆsS&Úøl\Ìâ>“(¡Ó/G$ÌœN£àâÓãÜ4eyÙÏ!@òL¢39Mg³ãxÌ !II@ˆ	Aàf94Â*¤dO‚^Š†#¾Ã–†Œúga…„pdYgE’˜ƒã‘@±Œ$Ù|>''KHƒ¤‚ëñj/ğ
+ Æ@KÓí­ŞÉâiæs(=XÚHn6DáaØÖq qs}ø±Çˆ´A•ªà!Û<©ÍÉ%00G©‘ØE ÁÏ€X<#nKÏ+¢A9mLšñr‰ıÌ’›»/mØ‘CËé´Aš™Hö3$%25fK[=Im:3Ï›•÷IY¢40H”¼ˆ7‡ºYnAS[ºs
+“Şï»	7ƒã>íY¯<ÒÓ°s]ØMB ^}J÷vßíX¢é5ğï¤“ÆŠ!Í™Q¢Qº7°Ğo,Q9˜Ià_º»!ñ|ÔK ¾ò§MÊ;©áHŠ¢s%00§ù¦Y˜(JÖËåN[‰nFå€ÑÛ|W¬,ˆ@~=²€î?µçy]“ì—¯,"+ì>ç·É>òì_H€(-YA[›M~õ†É~ëÏX=Ñê²%25®.–ñÖOö!FÅÙÖòE`V@ç—ëÍ(¯Eöª²!8]rAßˆ\{û‹4Æ+Öà³''Q­¬|#&ÔiÀ‚çHCÔÃçJÏÛ	+:¦Sgtf•,ÉóñMŞÛ©f½ ÇÔyÃIà@äò;Ù]v‡“á$„ö‹r¢ø#«Ã÷…Q‚[i…£3ƒ^Tá|‰ˆ,Õ¡öNLCŞÏÚD´jlÁøˆ‰ì¦($ùë„°½©ÁWg1%00İNG"Vt.;Ó÷tÄ!+¿@È`ºZëõÚmHU‰>>şJC.D6f ÁCâäÃÙş\W¶}Lâ­›P;dD–¯îêÊÌ6ííF¿sr²Å^Bì†T''x%00úbññ×‹AšØí£¿^³bî<47aEêY¸ »~ö
+ş˜I/‚×‹ĞĞÙ(aHÊsõaÀ÷-Ñó\Ï+lèI÷ºH$©ú³‚¡c5[IÖxp*µDßbCİ>;¹à_·—¤ú†œDÚ€õËšhğõÔH^ä?^ºQ²ğºÏÅOxt£•$³æÖvHICÙ§ô''k®rHïßâçŞ;N “È?û=Ì@ö¦ÄÉĞ]1r§{hé»†,^äêû8i;dëC·˜!!µ¤BRµ$â…$'']‚[‘k$å ì‡§rÃM‹.î¸6¦ò½£N4›­á°#ËRwˆóEËK‚Ä~uÉb6Ã‰s§¡ÍŞ`E·uXæŸ’N¢$Â£…‡EÂwÆyúûR+FªÏÏ…¸xüDµ÷x¬ÔÃã‘ë«Çã€Áúƒ[÷[_%25òBKj(;WÕñíT‡O,#yÁêëM¿Ø+\c$[m‚_Ø‰öpÅ!åS¬I£v£âÁóèì+¸pH©°ø—ÿˆñMø%00Ş¶3Õe%00%00%00%00IEND®B`‚' WHERE "id" = 1[0m
+  [4;36;1mOrphanAttachment Update (0.000073)[0m   [0;1mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT count(*) AS count_all FROM orphan_attachments [0m
+  [4;36;1mAttachment Delete all (0.000593)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000121)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000117)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000122)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000097)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Create (0.000188)[0m   [0mINSERT INTO orphan_attachments ("content_type", "size", "db_file_id", "filename") VALUES('image/png', 3, NULL, 'foo.txt')[0m
+  [4;36;1mDbFile Create (0.000182)[0m   [0;1mINSERT INTO db_files ("data") VALUES('foo')[0m
+  [4;35;1mOrphanAttachment Update (0.000129)[0m   [0mUPDATE orphan_attachments SET db_file_id = 1 WHERE (id = 1) [0m
+  [4;36;1mOrphanAttachment Load (0.000320)[0m   [0;1mSELECT * FROM orphan_attachments WHERE (orphan_attachments."id" = 1) [0m
+  [4;35;1mOrphanAttachment Update (0.000154)[0m   [0mUPDATE orphan_attachments SET "content_type" = 'image/png', "size" = 3, "db_file_id" = 1, "filename" = 'foo.txt' WHERE "id" = 1[0m
+  [4;36;1mAttachment Delete all (0.000561)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000120)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000119)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000129)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000098)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000579)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000120)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000116)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000114)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000098)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000540)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000120)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000118)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000129)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000099)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000442)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000107)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000102)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000101)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000100)[0m   [0mDELETE FROM db_files WHERE 1=1[0m
+  [4;36;1mAttachment Delete all (0.000340)[0m   [0;1mDELETE FROM attachments WHERE 1=1[0m
+  [4;35;1mFileAttachment Delete all (0.000093)[0m   [0mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;36;1mOrphanAttachment Delete all (0.000090)[0m   [0;1mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;35;1mMinimalAttachment Delete all (0.000089)[0m   [0mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;36;1mDbFile Delete all (0.000078)[0m   [0;1mDELETE FROM db_files WHERE 1=1[0m
+  [4;35;1mAttachment Delete all (0.000225)[0m   [0mDELETE FROM attachments WHERE 1=1[0m
+  [4;36;1mFileAttachment Delete all (0.000063)[0m   [0;1mDELETE FROM file_attachments WHERE 1=1[0m
+  [4;35;1mOrphanAttachment Delete all (0.000060)[0m   [0mDELETE FROM orphan_attachments WHERE 1=1[0m
+  [4;36;1mMinimalAttachment Delete all (0.000060)[0m   [0;1mDELETE FROM minimal_attachments WHERE 1=1[0m
+  [4;35;1mDbFile Delete all (0.000061)[0m   [0mDELETE FROM db_files WHERE 1=1[0m

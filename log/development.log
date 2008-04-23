@@ -1,0 +1,1114 @@
+  [4;36;1mSQL (0.000334)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.003399)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.003069)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000357)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateAudios (1)
+  [4;35;1mSQL (0.002199)[0m   [0mCREATE TABLE audios ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer DEFAULT NULL, "content_type" varchar(255) DEFAULT NULL, "filename" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001990)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000302)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000302)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000079)[0m   [0mPRAGMA index_list(audios)[0m
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:14:54) [GET]
+  Session ID: 0b9196674c60ee058c004fe42bc02468
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000373)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.00767 (130 reqs/sec) | Rendering: 0.00280 (36%) | DB: 0.00037 (4%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:15:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--9a89ccb4a25c2ab26570ed227bbded69bdb22efe
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.05435 (18 reqs/sec) | Rendering: 0.04896 (90%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:22:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.49563 (2 reqs/sec) | Rendering: 0.00246 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:23:05) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13811 (7 reqs/sec) | Rendering: 0.00184 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:34:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000351)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13654 (7 reqs/sec) | Rendering: 0.00108 (0%) | DB: 0.00035 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:34:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13699 (7 reqs/sec) | Rendering: 0.00269 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:34:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13391 (7 reqs/sec) | Rendering: 0.00178 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:35:09) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9056-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13963 (7 reqs/sec) | Rendering: 0.00178 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:37:14) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9056-2>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13846 (7 reqs/sec) | Rendering: 0.00172 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:37:47) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9056-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.14011 (7 reqs/sec) | Rendering: 0.00174 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:38:13) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9056-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000389)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 7507968, '2008-04-22 08:38:13', '01_Hells_Bells.mp3', '2008-04-22 08:38:13')[0m
+Redirected to http://localhost:3000/audios/1
+Completed in 0.41078 (2 reqs/sec) | DB: 0.00039 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 08:38:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--1a2b7d6d155b28c768a92b5acb11b346df82347d
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000233)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 1) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.14130 (7 reqs/sec) | Rendering: 0.00284 (2%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/1]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:39:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000469)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.14035 (7 reqs/sec) | Rendering: 0.00327 (2%) | DB: 0.00047 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-22 08:39:17) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "_method"=>"delete", "action"=>"destroy", "id"=>"1", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000228)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 1) [0m
+  [4;36;1mAudio Destroy (0.000265)[0m   [0;1m DELETE FROM audios
+ WHERE "id" = 1
+[0m
+Exception destroying  "/Users/peter/work/rails/backgrounder/media/audio/0000/0001/01_Hells_Bells.mp3": [Errno::ENOENT] 
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:1297:in `unlink'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:1297:in `remove_file'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:1302:in `platform_support'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:1296:in `remove_file'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:771:in `remove_file'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:549:in `rm'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:548:in `each'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:548:in `rm'
+ > /Users/peter/work/rails/backgrounder/vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu/backends/file_system_backend.rb:59:in `destroy_file'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:307:in `send'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:307:in `callback'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:304:in `each'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:304:in `callback'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:296:in `destroy_without_transactions'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:104:in `destroy'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:80:in `transaction'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:100:in `transaction'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:104:in `destroy'
+ > /Users/peter/work/rails/backgrounder/app/controllers/audios_controller.rb:78:in `destroy'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+ > /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+ > /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+ > /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+ > /System/Library/Frameworks/RubyCocoa.framework/Resources/ruby/osx/objc/ruby_addition.rb:110:in `initialize'
+ > /System/Library/Frameworks/RubyCocoa.framework/Resources/ruby/osx/objc/ruby_addition.rb:110:in `pre_rubycocoa_new'
+ > /System/Library/Frameworks/RubyCocoa.framework/Resources/ruby/osx/objc/ruby_addition.rb:110:in `new'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+ > /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+ > /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+ > /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+ > /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+ > /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+ > /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+ > /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+ > /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+ > ./script/server:3
+Redirected to http://localhost:3000/audios
+Completed in 0.14019 (7 reqs/sec) | DB: 0.00049 (0%) | 302 Found [http://localhost/audios/1]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:39:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000341)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13307 (7 reqs/sec) | Rendering: 0.00104 (0%) | DB: 0.00034 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:39:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13258 (7 reqs/sec) | Rendering: 0.00182 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:39:24) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9056-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000316)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 7507968, '2008-04-22 08:39:24', '01_Hells_Bells.mp3', '2008-04-22 08:39:24')[0m
+Redirected to http://localhost:3000/audios/2
+Completed in 0.34647 (2 reqs/sec) | DB: 0.00032 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 08:39:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--1a2b7d6d155b28c768a92b5acb11b346df82347d
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000238)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 2) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.14009 (7 reqs/sec) | Rendering: 0.00217 (1%) | DB: 0.00024 (0%) | 200 OK [http://localhost/audios/2]
+
+
+Processing AudiosController#edit (for 127.0.0.1 at 2008-04-22 08:39:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000227)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 2) [0m
+Rendering template within layouts/audios
+Rendering audios/edit
+Completed in 0.13880 (7 reqs/sec) | Rendering: 0.00395 (2%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/2/edit]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 08:39:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000225)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 2) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13403 (7 reqs/sec) | Rendering: 0.00206 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/2]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:39:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000527)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.18911 (5 reqs/sec) | Rendering: 0.00370 (1%) | DB: 0.00053 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-22 08:42:10) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "_method"=>"delete", "action"=>"destroy", "id"=>"2", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000231)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 2) [0m
+  [4;36;1mAudio Destroy (0.000267)[0m   [0;1m DELETE FROM audios
+ WHERE "id" = 2
+[0m
+Redirected to http://localhost:3000/audios
+Completed in 0.14536 (6 reqs/sec) | DB: 0.00050 (0%) | 302 Found [http://localhost/audios/2]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:42:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000341)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13477 (7 reqs/sec) | Rendering: 0.00108 (0%) | DB: 0.00034 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:42:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13359 (7 reqs/sec) | Rendering: 0.00187 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 08:42:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13568 (7 reqs/sec) | Rendering: 0.00291 (2%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 08:42:55) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9056-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000326)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 7507968, '2008-04-22 08:42:55', '01_Hells_Bells.mp3', '2008-04-22 08:42:55')[0m
+Redirected to http://localhost:3000/audios/3
+Completed in 0.38493 (2 reqs/sec) | DB: 0.00033 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 08:42:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--1a2b7d6d155b28c768a92b5acb11b346df82347d
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000234)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 3) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13965 (7 reqs/sec) | Rendering: 0.00216 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/3]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 08:42:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000528)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13772 (7 reqs/sec) | Rendering: 0.00349 (2%) | DB: 0.00053 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 10:03:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000845)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.47973 (2 reqs/sec) | Rendering: 0.00988 (2%) | DB: 0.00085 (0%) | 200 OK [http://localhost/]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 10:03:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.15994 (6 reqs/sec) | Rendering: 0.02323 (14%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 10:03:08) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9724-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+  [4;35;1mAudio Create (0.000568)[0m   [0mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 7639123, '2008-04-22 10:03:08', '02_Shoot_To_Thrill.mp3', '2008-04-22 10:03:08')[0m
+
+
+ActiveRecord::StatementInvalid (Could not find table 'jobs'):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/sqlite3_adapter.rb:29:in `table_structure'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/object/misc.rb:28:in `returning'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/sqlite3_adapter.rb:28:in `table_structure'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/sqlite_adapter.rb:189:in `columns'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1080:in `columns'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:2363:in `attributes_from_column_definition_without_lock'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/locking/optimistic.rb:55:in `attributes_from_column_definition'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1922:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/associations/association_collection.rb:192:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/associations/association_collection.rb:192:in `create_record'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1693:in `with_scope'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/associations/association_collection.rb:192:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/associations/association_collection.rb:192:in `create_record'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/associations/association_collection.rb:97:in `create!'
+    /app/models/audio.rb:14:in `create_conversion_job'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:307:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:307:in `callback'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:304:in `each'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:304:in `callback'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:227:in `create_without_timestamps'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/timestamp.rb:29:in `create'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:2238:in `create_or_update_without_callbacks'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/callbacks.rb:213:in `create_or_update'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1972:in `save_without_validation'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/validations.rb:934:in `save_without_transactions'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:108:in `save'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:80:in `transaction'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:100:in `transaction'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:108:in `save'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:120:in `rollback_active_record_state!'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/transactions.rb:108:in `save'
+    /app/controllers/audios_controller.rb:46:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/audios_controller.rb:45:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/RubyCocoa.framework/Resources/ruby/osx/objc/ruby_addition.rb:110:in `initialize'
+    /System/Library/Frameworks/RubyCocoa.framework/Resources/ruby/osx/objc/ruby_addition.rb:110:in `pre_rubycocoa_new'
+    /System/Library/Frameworks/RubyCocoa.framework/Resources/ruby/osx/objc/ruby_addition.rb:110:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.000207)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000184)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateJobs (2)
+  [4;35;1mSQL (0.003148)[0m   [0mCREATE TABLE jobs ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "status" varchar(255) DEFAULT NULL, "status_description" text DEFAULT NULL, "processed_at" datetime DEFAULT NULL, "completed_at" datetime DEFAULT NULL, "processable_id" integer DEFAULT NULL, "processable_type" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002885)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000355)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000491)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000093)[0m   [0mPRAGMA index_list(audios)[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mPRAGMA index_list(jobs)[0m
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 10:03:27) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI9724-2>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000330)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 7639123, '2008-04-22 10:03:27', '02_Shoot_To_Thrill.mp3', '2008-04-22 10:03:27')[0m
+  [4;35;1mJob Create (0.000154)[0m   [0mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-22 10:03:27', NULL, 4, NULL, 'Audio', '2008-04-22 10:03:27')[0m
+Redirected to http://localhost:3001/audios/4
+Completed in 0.41058 (2 reqs/sec) | DB: 0.00048 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 10:03:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--1a2b7d6d155b28c768a92b5acb11b346df82347d
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000230)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 4) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13988 (7 reqs/sec) | Rendering: 0.00287 (2%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/4]
+  [4;36;1mAudio Load (0.000598)[0m   [0;1mSELECT * FROM audios LIMIT 1[0m
+  [4;35;1mAudio Load (0.000259)[0m   [0mSELECT * FROM audios WHERE (audios."id" = '--- :last
+') [0m
+  [4;36;1mAudio Load (0.000646)[0m   [0;1mSELECT * FROM audios [0m
+  [4;35;1mJob Load (0.000514)[0m   [0mSELECT * FROM jobs WHERE (jobs.processable_id = 4 AND jobs.processable_type = 'Audio') [0m
+  [4;36;1mJob Load (0.000580)[0m   [0;1mSELECT * FROM jobs WHERE (status IS NULL) LIMIT 1[0m
+  [4;35;1mJob Update (0.000837)[0m   [0mUPDATE jobs SET "created_at" = '2008-04-22 10:03:27', "completed_at" = NULL, "processable_id" = 4, "processed_at" = '2008-04-22 10:05:01', "status" = 'in_process', "processable_type" = 'Audio', "updated_at" = '2008-04-22 10:05:01', "status_description" = NULL WHERE "id" = 1[0m
+  [4;36;1mAudio Load (0.000512)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 4) [0m
+  [4;35;1mJob Update (0.000609)[0m   [0mUPDATE jobs SET "created_at" = '2008-04-22 10:03:27', "completed_at" = '2008-04-22 10:05:14', "processable_id" = 4, "processed_at" = '2008-04-22 10:05:01', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 10:05:14', "status_description" = NULL WHERE "id" = 1[0m
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 14:00:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000686)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.59758 (1 reqs/sec) | Rendering: 0.02891 (4%) | DB: 0.00069 (0%) | 200 OK [http://localhost/]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-22 14:00:16) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "_method"=>"delete", "action"=>"destroy", "id"=>"4", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000226)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 4) [0m
+  [4;36;1mAudio Destroy (0.000365)[0m   [0;1m DELETE FROM audios
+ WHERE "id" = 4
+[0m
+Redirected to http://localhost:3000/audios
+Completed in 0.14332 (6 reqs/sec) | DB: 0.00059 (0%) | 302 Found [http://localhost/audios/4]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 14:00:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000521)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13829 (7 reqs/sec) | Rendering: 0.00329 (2%) | DB: 0.00052 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-22 14:00:18) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "_method"=>"delete", "action"=>"destroy", "id"=>"3", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000234)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 3) [0m
+  [4;35;1mAudio Destroy (0.000273)[0m   [0m DELETE FROM audios
+ WHERE "id" = 3
+[0m
+Redirected to http://localhost:3000/audios
+Completed in 0.19625 (5 reqs/sec) | DB: 0.00051 (0%) | 302 Found [http://localhost/audios/3]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 14:00:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000382)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13634 (7 reqs/sec) | Rendering: 0.00105 (0%) | DB: 0.00038 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 14:00:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13630 (7 reqs/sec) | Rendering: 0.00306 (2%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 14:00:38) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI18350-1>}, "commit"=>"Create", "authenticity_token"=>"d87913699ffbfd282b55d616a22ab5bc0091d098", "action"=>"create", "controller"=>"audios"}
+  [4;35;1mAudio Create (0.000320)[0m   [0mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 3091444, '2008-04-22 14:00:38', 'get_it_hot.mp3', '2008-04-22 14:00:38')[0m
+  [4;36;1mJob Create (0.000157)[0m   [0;1mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-22 14:00:38', NULL, 5, NULL, 'Audio', '2008-04-22 14:00:38')[0m
+Redirected to http://localhost:3000/audios/5
+Completed in 0.25485 (3 reqs/sec) | DB: 0.00048 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 14:00:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--1a2b7d6d155b28c768a92b5acb11b346df82347d
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000225)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 5) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13725 (7 reqs/sec) | Rendering: 0.00283 (2%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/5]
+  [4;36;1mJob Load (0.000617)[0m   [0;1mSELECT * FROM jobs WHERE (status IS NULL) LIMIT 1[0m
+  [4;35;1mJob Update (0.000431)[0m   [0mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = NULL, "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'in_process', "processable_type" = 'Audio', "updated_at" = '2008-04-22 14:00:57', "status_description" = NULL WHERE "id" = 2[0m
+  [4;36;1mJob Load (0.000341)[0m   [0;1mSELECT * FROM jobs WHERE (status IS NULL) LIMIT 1[0m
+  [4;35;1mJob Load (0.000272)[0m   [0mSELECT * FROM jobs WHERE (status IS NULL) LIMIT 1[0m
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 14:01:35) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTBkMzlkNmQ3MjFmYzg2ODVmMDAyMmViZTg0NTFj%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1cc01de09e5319db1f187a9dd8218bd0635c366b
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000511)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.18369 (5 reqs/sec) | Rendering: 0.00352 (1%) | DB: 0.00051 (0%) | 200 OK [http://localhost/audios]
+  [4;36;1mJob Load (0.000702)[0m   [0;1mSELECT * FROM jobs [0m
+  [4;36;1mSQL (0.000616)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mJob Load (0.000323)[0m   [0mSELECT * FROM jobs WHERE (jobs."id" = '--- :last
+') [0m
+  [4;36;1mJob Load (0.000539)[0m   [0;1mSELECT * FROM jobs WHERE (jobs."id" = 2) [0m
+  [4;35;1mAudio Load (0.000307)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 5) [0m
+  [4;36;1mJob Update (0.000559)[0m   [0;1mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = '2008-04-22 14:04:13', "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 14:04:13', "status_description" = NULL WHERE "id" = 2[0m
+  [4;35;1mJob Update (0.000511)[0m   [0mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = '2008-04-22 15:39:28', "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 15:39:28', "status_description" = NULL WHERE "id" = 2[0m
+  [4;36;1mJob Update (0.000493)[0m   [0;1mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = '2008-04-22 15:39:34', "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 15:39:34', "status_description" = NULL WHERE "id" = 2[0m
+  [4;36;1mJob Load (0.000632)[0m   [0;1mSELECT * FROM jobs WHERE (status IS NULL) LIMIT 1[0m
+  [4;35;1mJob Load (0.000497)[0m   [0mSELECT * FROM jobs WHERE (jobs."id" = 2) [0m
+  [4;36;1mJob Load (0.000368)[0m   [0;1mSELECT * FROM jobs WHERE (jobs."id" = 2) [0m
+  [4;35;1mAudio Load (0.000312)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 5) [0m
+  [4;36;1mJob Update (0.000535)[0m   [0;1mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = '2008-04-22 16:57:10', "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 16:57:10', "status_description" = NULL WHERE "id" = 2[0m
+  [4;35;1mJob Update (0.000779)[0m   [0mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = '2008-04-22 16:57:42', "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 16:57:42', "status_description" = NULL WHERE "id" = 2[0m
+  [4;36;1mJob Load (0.000365)[0m   [0;1mSELECT * FROM jobs WHERE (jobs."id" = 2) [0m
+  [4;35;1mAudio Load (0.000311)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 5) [0m
+  [4;36;1mJob Update (0.000446)[0m   [0;1mUPDATE jobs SET "created_at" = '2008-04-22 14:00:38', "completed_at" = '2008-04-22 16:58:01', "processable_id" = 5, "processed_at" = '2008-04-22 14:00:57', "status" = 'processed', "processable_type" = 'Audio', "updated_at" = '2008-04-22 16:58:01', "status_description" = NULL WHERE "id" = 2[0m
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-22 17:30:59) [GET]
+  Session ID: 203fd43a6aa82a2b508ff58d0e8a23ff
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000895)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.90042 (1 reqs/sec) | Rendering: 0.01090 (1%) | DB: 0.00090 (0%) | 200 OK [http://localhost/]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-22 17:31:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.15259 (6 reqs/sec) | Rendering: 0.02112 (13%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-22 17:31:21) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI307-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+  [4;35;1mAudio Create (0.000373)[0m   [0mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 7507968, '2008-04-22 17:31:21', '01_Hells_Bells.mp3', '2008-04-22 17:31:21')[0m
+  [4;36;1mJob Create (0.019669)[0m   [0;1mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-22 17:31:21', NULL, 6, NULL, 'Audio', '2008-04-22 17:31:21')[0m
+Redirected to http://localhost:3000/audios/6
+Completed in 0.43934 (2 reqs/sec) | DB: 0.02004 (4%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-22 17:31:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000236)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 6) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.26526 (3 reqs/sec) | Rendering: 0.01623 (6%) | DB: 0.00024 (0%) | 200 OK [http://localhost/audios/6]
+  [4;36;1mJob Load (0.000566)[0m   [0;1mSELECT * FROM jobs WHERE (status IS NULL) LIMIT 1[0m
+  [4;35;1mJob Update (0.000402)[0m   [0mUPDATE jobs SET "created_at" = '2008-04-22 17:31:21', "completed_at" = NULL, "processable_id" = 6, "processed_at" = '2008-04-23 09:08:53', "status" = 'in_process', "processable_type" = 'Audio', "updated_at" = '2008-04-23 09:08:53', "status_description" = NULL WHERE "id" = 3[0m
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:18:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000571)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13479 (7 reqs/sec) | Rendering: 0.00333 (2%) | DB: 0.00057 (0%) | 200 OK [http://localhost/]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:18:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13360 (7 reqs/sec) | Rendering: 0.00219 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:18:20) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI307-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+  [4;35;1mAudio Create (0.000299)[0m   [0mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 6143245, '2008-04-23 09:18:20', '06_Back_In_Black.mp3', '2008-04-23 09:18:20')[0m
+  [4;36;1mJob Create (0.000151)[0m   [0;1mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-23 09:18:20', NULL, 7, NULL, 'Audio', '2008-04-23 09:18:20')[0m
+Redirected to http://localhost:3000/audios/7
+Completed in 0.36278 (2 reqs/sec) | DB: 0.00045 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:18:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13622 (7 reqs/sec) | Rendering: 0.00211 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/7]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:19:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13442 (7 reqs/sec) | Rendering: 0.00358 (2%) | DB: 0.00065 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:19:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13287 (7 reqs/sec) | Rendering: 0.00188 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:19:07) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI307-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios/8
+Completed in 0.37186 (2 reqs/sec) | DB: 0.00046 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:19:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"8", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13648 (7 reqs/sec) | Rendering: 0.00214 (1%) | DB: 0.00022 (0%) | 200 OK [http://localhost/audios/8]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:20:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13409 (7 reqs/sec) | Rendering: 0.00369 (2%) | DB: 0.00071 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:20:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.17991 (5 reqs/sec) | Rendering: 0.05024 (27%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:20:16) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI307-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios/9
+Completed in 0.34968 (2 reqs/sec) | DB: 0.00046 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:20:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"9", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13567 (7 reqs/sec) | Rendering: 0.00210 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/9]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:20:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.14831 (6 reqs/sec) | Rendering: 0.00424 (2%) | DB: 0.00079 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:20:58) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"6", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.13924 (7 reqs/sec) | DB: 0.00050 (0%) | 302 Found [http://localhost/audios/6]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:20:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13453 (7 reqs/sec) | Rendering: 0.00367 (2%) | DB: 0.00071 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:21:07) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"9", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.13514 (7 reqs/sec) | DB: 0.00048 (0%) | 302 Found [http://localhost/audios/9]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:21:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13471 (7 reqs/sec) | Rendering: 0.00364 (2%) | DB: 0.00065 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:21:11) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"8", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.14220 (7 reqs/sec) | DB: 0.00051 (0%) | 302 Found [http://localhost/audios/8]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:21:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13426 (7 reqs/sec) | Rendering: 0.00340 (2%) | DB: 0.00057 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:21:13) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"7", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.13640 (7 reqs/sec) | DB: 0.00048 (0%) | 302 Found [http://localhost/audios/7]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:21:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13347 (7 reqs/sec) | Rendering: 0.00314 (2%) | DB: 0.00049 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:21:16) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"5", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.19125 (5 reqs/sec) | DB: 0.00049 (0%) | 302 Found [http://localhost/audios/5]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:21:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13092 (7 reqs/sec) | Rendering: 0.00105 (0%) | DB: 0.00036 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:21:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13202 (7 reqs/sec) | Rendering: 0.00179 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:21:41) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI307-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios/10
+Completed in 0.34951 (2 reqs/sec) | DB: 0.00046 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:21:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"10", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13556 (7 reqs/sec) | Rendering: 0.00209 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/10]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:26:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.17688 (5 reqs/sec) | Rendering: 0.00329 (1%) | DB: 0.00052 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:26:41) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"10", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.13635 (7 reqs/sec) | DB: 0.00049 (0%) | 302 Found [http://localhost/audios/10]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:26:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13282 (7 reqs/sec) | Rendering: 0.00105 (0%) | DB: 0.00038 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:26:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13175 (7 reqs/sec) | Rendering: 0.00191 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:26:50) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI307-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios/11
+Completed in 0.31729 (3 reqs/sec) | DB: 0.00047 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:26:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"11", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13203 (7 reqs/sec) | Rendering: 0.00208 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/11]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:30:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.14003 (7 reqs/sec) | Rendering: 0.00320 (2%) | DB: 0.00050 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#destroy (for 127.0.0.1 at 2008-04-23 09:39:04) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"delete", "action"=>"destroy", "id"=>"11", "controller"=>"audios"}
+Redirected to http://localhost:3000/audios
+Completed in 0.13622 (7 reqs/sec) | DB: 0.00050 (0%) | 302 Found [http://localhost/audios/11]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:39:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13169 (7 reqs/sec) | Rendering: 0.00109 (0%) | DB: 0.00038 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:39:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.39264 (2 reqs/sec) | Rendering: 0.00356 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:39:49) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI979-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000381)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 6133760, '2008-04-23 09:39:49', '10_Rock_n_Roll_Ain_t_Noise_Pollution.mp3', '2008-04-23 09:39:49')[0m
+  [4;35;1mJob Create (0.000163)[0m   [0mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-23 09:39:49', NULL, 12, NULL, 'Audio', '2008-04-23 09:39:49')[0m
+Redirected to http://localhost:3000/audios/12
+Completed in 0.35969 (2 reqs/sec) | DB: 0.00054 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:39:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"12", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000230)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 12) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.22929 (4 reqs/sec) | Rendering: 0.00279 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/12]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:42:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000485)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13443 (7 reqs/sec) | Rendering: 0.00415 (3%) | DB: 0.00049 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:43:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13304 (7 reqs/sec) | Rendering: 0.00184 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:43:05) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI979-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000314)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 5096216, '2008-04-23 09:43:05', '04_Given_The_Dog_A_Bone.mp3', '2008-04-23 09:43:05')[0m
+  [4;35;1mJob Create (0.000267)[0m   [0mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-23 09:43:05', NULL, 13, NULL, 'Audio', '2008-04-23 09:43:05')[0m
+Redirected to http://localhost:3000/audios/13
+Completed in 0.31221 (3 reqs/sec) | DB: 0.00058 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:43:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"13", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000240)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 13) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.19269 (5 reqs/sec) | Rendering: 0.00358 (1%) | DB: 0.00024 (0%) | 200 OK [http://localhost/audios/13]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:43:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000575)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.17820 (5 reqs/sec) | Rendering: 0.00344 (1%) | DB: 0.00057 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#new (for 127.0.0.1 at 2008-04-23 09:43:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"new", "controller"=>"audios"}
+Rendering template within layouts/audios
+Rendering audios/new
+Completed in 0.13543 (7 reqs/sec) | Rendering: 0.00179 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/audios/new]
+
+
+Processing AudiosController#create (for 127.0.0.1 at 2008-04-23 09:43:56) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"uploaded_data"=>#<File:/var/folders/Y1/Y1ymZEmLFoaOA-O2EejnrU+++TI/-Tmp-/CGI979-1>}, "commit"=>"Create", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "action"=>"create", "controller"=>"audios"}
+  [4;36;1mAudio Create (0.000306)[0m   [0;1mINSERT INTO audios ("content_type", "size", "updated_at", "filename", "created_at") VALUES('audio/mpeg', 5181440, '2008-04-23 09:43:57', '03_What_Do_You_Do_For_Money.mp3', '2008-04-23 09:43:57')[0m
+  [4;35;1mJob Create (0.000163)[0m   [0mINSERT INTO jobs ("completed_at", "status", "updated_at", "status_description", "processable_id", "processed_at", "processable_type", "created_at") VALUES(NULL, NULL, '2008-04-23 09:43:57', NULL, 14, NULL, 'Audio', '2008-04-23 09:43:57')[0m
+Redirected to http://localhost:3000/audios/14
+Completed in 0.31596 (3 reqs/sec) | DB: 0.00047 (0%) | 302 Found [http://localhost/audios]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:43:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--d7b0eb00e2cd63ea968518d81a6b75b9ea3f25b5
+  Parameters: {"action"=>"show", "id"=>"14", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000232)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 14) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13414 (7 reqs/sec) | Rendering: 0.00216 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/14]
+
+
+Processing AudiosController#edit (for 127.0.0.1 at 2008-04-23 09:46:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000228)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 14) [0m
+Rendering template within layouts/audios
+Rendering audios/edit
+Completed in 0.13518 (7 reqs/sec) | Rendering: 0.00358 (2%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/14/edit]
+
+
+Processing AudiosController#update (for 127.0.0.1 at 2008-04-23 09:46:38) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"filename"=>"What_Do_You_Do_For_Money.mp3"}, "commit"=>"Update", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"put", "action"=>"update", "id"=>"14", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000277)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 14) [0m
+  [4;35;1mAudio Update (0.000337)[0m   [0mUPDATE audios SET "created_at" = '2008-04-23 09:43:57', "content_type" = 'audio/mpeg', "size" = 5181440, "filename" = 'What_Do_You_Do_For_Money.mp3', "updated_at" = '2008-04-23 09:46:38' WHERE "id" = 14[0m
+Redirected to http://localhost:3000/audios/14
+Completed in 0.18566 (5 reqs/sec) | DB: 0.00061 (0%) | 302 Found [http://localhost/audios/14]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:46:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--73b991d60c5c301708d27f1c057fda1ea31568f6
+  Parameters: {"action"=>"show", "id"=>"14", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000228)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 14) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13366 (7 reqs/sec) | Rendering: 0.00207 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/14]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:46:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000643)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13526 (7 reqs/sec) | Rendering: 0.00356 (2%) | DB: 0.00064 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#edit (for 127.0.0.1 at 2008-04-23 09:47:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"edit", "id"=>"13", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000236)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 13) [0m
+Rendering template within layouts/audios
+Rendering audios/edit
+Completed in 0.13457 (7 reqs/sec) | Rendering: 0.00277 (2%) | DB: 0.00024 (0%) | 200 OK [http://localhost/audios/13/edit]
+
+
+Processing AudiosController#update (for 127.0.0.1 at 2008-04-23 09:47:17) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"filename"=>"Given_The_Dog_A_Bone.mp3"}, "commit"=>"Update", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"put", "action"=>"update", "id"=>"13", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000236)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 13) [0m
+  [4;36;1mAudio Update (0.000277)[0m   [0;1mUPDATE audios SET "created_at" = '2008-04-23 09:43:05', "content_type" = 'audio/mpeg', "size" = 5096216, "filename" = 'Given_The_Dog_A_Bone.mp3', "updated_at" = '2008-04-23 09:47:17' WHERE "id" = 13[0m
+Redirected to http://localhost:3000/audios/13
+Completed in 0.19119 (5 reqs/sec) | DB: 0.00051 (0%) | 302 Found [http://localhost/audios/13]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:47:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--73b991d60c5c301708d27f1c057fda1ea31568f6
+  Parameters: {"action"=>"show", "id"=>"13", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000227)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 13) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13431 (7 reqs/sec) | Rendering: 0.00214 (1%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/13]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:47:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000636)[0m   [0;1mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13343 (7 reqs/sec) | Rendering: 0.00357 (2%) | DB: 0.00064 (0%) | 200 OK [http://localhost/audios]
+
+
+Processing AudiosController#edit (for 127.0.0.1 at 2008-04-23 09:47:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"edit", "id"=>"12", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000227)[0m   [0mSELECT * FROM audios WHERE (audios."id" = 12) [0m
+Rendering template within layouts/audios
+Rendering audios/edit
+Completed in 0.13144 (7 reqs/sec) | Rendering: 0.00264 (2%) | DB: 0.00023 (0%) | 200 OK [http://localhost/audios/12/edit]
+
+
+Processing AudiosController#update (for 127.0.0.1 at 2008-04-23 09:47:24) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"audio"=>{"filename"=>"Rock_n_Roll_Ain_t_Noise_Pollution.mp3"}, "commit"=>"Update", "authenticity_token"=>"e1464d1711b0b0bdb1ad1a27f99e5a8d9b299267", "_method"=>"put", "action"=>"update", "id"=>"12", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000229)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 12) [0m
+  [4;35;1mAudio Update (0.000277)[0m   [0mUPDATE audios SET "created_at" = '2008-04-23 09:39:49', "content_type" = 'audio/mpeg', "size" = 6133760, "filename" = 'Rock_n_Roll_Ain_t_Noise_Pollution.mp3', "updated_at" = '2008-04-23 09:47:24' WHERE "id" = 12[0m
+Redirected to http://localhost:3000/audios/12
+Completed in 0.13553 (7 reqs/sec) | DB: 0.00051 (0%) | 302 Found [http://localhost/audios/12]
+
+
+Processing AudiosController#show (for 127.0.0.1 at 2008-04-23 09:47:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRBdWRpbyB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--73b991d60c5c301708d27f1c057fda1ea31568f6
+  Parameters: {"action"=>"show", "id"=>"12", "controller"=>"audios"}
+  [4;36;1mAudio Load (0.000257)[0m   [0;1mSELECT * FROM audios WHERE (audios."id" = 12) [0m
+Rendering template within layouts/audios
+Rendering audios/show
+Completed in 0.13672 (7 reqs/sec) | Rendering: 0.00214 (1%) | DB: 0.00026 (0%) | 200 OK [http://localhost/audios/12]
+
+
+Processing AudiosController#index (for 127.0.0.1 at 2008-04-23 09:47:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmZlZWFmNGM4ZTJiMjA2NDViNTM1NzlhMDIxYzEy%0AMzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2b37224338b98cc2dc901813c9049fe7a2be5d41
+  Parameters: {"action"=>"index", "controller"=>"audios"}
+  [4;35;1mAudio Load (0.000663)[0m   [0mSELECT * FROM audios [0m
+Rendering template within layouts/audios
+Rendering audios/index
+Completed in 0.13685 (7 reqs/sec) | Rendering: 0.00368 (2%) | DB: 0.00066 (0%) | 200 OK [http://localhost/audios]

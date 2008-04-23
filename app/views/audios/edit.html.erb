@@ -1,0 +1,18 @@
+<h1>Editing audio</h1>
+
+<%= error_messages_for :audio %>
+
+<% form_for(@audio) do |f| %>
+
+  <p>
+    <b>Filename</b><br />
+    <%= f.text_field :filename %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @audio %> |
+<%= link_to 'Back', audios_path %>
