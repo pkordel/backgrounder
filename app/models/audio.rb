@@ -3,7 +3,8 @@ class Audio < ActiveRecord::Base
                  :max_size => 8.megabytes,
                  :content_type => ['audio/aiff', 'audio/x-aiff', 'audio/basic',
                                    'audio/mp3', 'audio/x-mp3', 'audio/mpeg',
-                                   'audio/mpg', 'audio/wav', 'audio/x-wav']
+                                   'audio/mpg', 'audio/wav', 'audio/x-wav', 
+                                   'audio/m4a']
   validates_as_attachment
   
   has_many :jobs, :as => :processable
