@@ -1,3 +1,28 @@
+This app is a simple demo of running a ruby daemon in the background to run 
+recurring processor-intensive tasks without taxing the web app.
+In this case, upload audio files and convert them to 128k mp3 files. Just 
+upload an audio file, see app/models/audio.rb to see which formats are 
+supported, or change if you want.
+
+Setup:
+
+Requires ffmpeg with the LAME mp3 encoder. If you're on a Mac, see this link:
+http://stephenjungels.com/jungels.net/articles/ffmpeg-howto.html
+
+Then, just run the usual rake tasks to create and migrate the databases.
+The Daemon script is here: lib/audio_processor.rb.
+
+Start and fork the daemon:
+ruby ./script/runner ./lib/audio_processor.rb start
+Stop it:
+ruby ./script/runner ./lib/audio_processor.rb stop
+
+Start and keep in foreground to see STDOUT:
+ruby ./script/runner ./lib/audio_processor.rb run
+Stop it:
+ctrl c
+
+
 == Welcome to Rails
 
 Rails is a web-application and persistence framework that includes everything
